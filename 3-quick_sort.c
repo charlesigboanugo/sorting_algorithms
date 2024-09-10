@@ -45,7 +45,10 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 			swap(array, i, j, size);
 		}
 	}
-	swap(array, i + 1, high, size);
+
+	if (!all_same)
+		swap(array, i + 1, high, size);
+
 	return (all_same ? -1 : i + 1);
 }
 
