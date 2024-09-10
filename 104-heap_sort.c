@@ -61,7 +61,9 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
  */
 void heapify(int *array, size_t size)
 {
-	for (ssize_t start = (size - 2) / 2; start >= 0; start--)
+	ssize_t start;
+
+	for (start = (size - 2) / 2; start >= 0; start--)
 	{
 		sift_down(array, start, size - 1, size);
 	}
@@ -74,12 +76,14 @@ void heapify(int *array, size_t size)
  */
 void heap_sort(int *array, size_t size)
 {
+	size_t end;
+
 	if (size < 2 || !array)
 		return;
 
 	heapify(array, size);
 
-	for (size_t end = size - 1; end > 0; end--)
+	for (end = size - 1; end > 0; end--)
 	{
 		swap(array, end, 0, size);
 		sift_down(array, 0, end - 1, size);
