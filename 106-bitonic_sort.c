@@ -42,7 +42,7 @@ void bitonic_merge(int *array, int low, int count, int direction, size_t size)
 void bitonic_recursion(int *array, int low, int count, int direc, size_t size)
 {
 	int k = count / 2;
-	int dirc = direc ? "UP" : "DOWN";
+	const char *dirc = direc ? "UP" : "DOWN";
 
 	if (count > 1)
 	{
