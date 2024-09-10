@@ -1,5 +1,6 @@
 #include "sort.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * merge - Merges two halves of an array in sorted order.
@@ -14,10 +15,12 @@
 void merge(int *array, size_t left, size_t right)
 {
 	size_t tmp_size = (right - left + 1);
-	size_t half = tmp_size / 2;
-	size_t i = left, j = left + half, k;
-	int tmp[tmp_size];
+	size_t half = tmp_size / 2, i = left, j = left + half, k;
+	int *tmp;
 
+	tmp = malloc(sizeof(int) * tmp_size);
+	if (tmp == NULL)
+		exit(EXIT_FAILURE);
 	for (k = 0; i < left + half && j <= right; k++)
 	{
 		if (array[i] <= array[j])
@@ -50,6 +53,7 @@ void merge(int *array, size_t left, size_t right)
 	printf("%i\n", array[i]);
 	for (i = left; i <= right; i++)
 		array[i] = tmp[i - left];
+	free(tmp);
 }
 
 /**
