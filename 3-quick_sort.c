@@ -7,13 +7,18 @@
  * @array: The array
  * @i: Index of the first element
  * @j: Index of the second element
+ * @size: The size of the array
  */
-void swap(int *array, size_t i, size_t j)
+void swap(int *array, size_t i, size_t j, size_t size)
 {
 	int temp = array[i];
 
-	array[i] = array[j];
-	array[j] = temp;
+	if (i != j)
+	{
+		array[i] = array[j];
+		array[j] = temp;
+		print_array(array, size);
+	}
 }
 
 /**
@@ -35,12 +40,10 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 		if (array[j] < pivot)
 		{
 			i++;
-			swap(array, i, j);
-			print_array(array, size);
+			swap(array, i, j, size);
 		}
 	}
-	swap(array, i + 1, high);
-	print_array(array, size);
+	swap(array, i + 1, high, size);
 	return (i + 1);
 }
 
