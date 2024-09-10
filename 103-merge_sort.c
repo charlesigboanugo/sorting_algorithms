@@ -38,7 +38,7 @@ void merge(int *array, size_t left, size_t right)
 		tmp[k] = array[i];
 	for (; j <= right; j++, k++)
 		tmp[k] = array[j];
-	printf("merging...\n");
+	printf("Merging...\n");
 	printf("[left]: ");
 	print_array(array + left, half);
 	printf("[right]: ");
