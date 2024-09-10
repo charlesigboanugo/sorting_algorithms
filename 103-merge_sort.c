@@ -40,17 +40,11 @@ void merge(int *array, size_t left, size_t right)
 		tmp[k] = array[j];
 	printf("merging...\n");
 	printf("[left]: ");
-	for (i = left; i < left + half - 1; i++)
-		printf("%i, ", array[i]);
-	printf("%i\n", array[i]);
+	print_array(array + left, half);
 	printf("[right]: ");
-	for (; i <= right - 1; i++)
-		printf("%i, ", array[i]);
-	printf("%i\n", array[i]);
+	print_array(array + left + half, tmp_size - half);
 	printf("[Done]: ");
-	for (i = 0; i < tmp_size - 1; i++)
-		printf("%i, ", tmp[i]);
-	printf("%i\n", array[i]);
+	print_array(tmp, tmp_size);
 	for (i = left; i <= right; i++)
 		array[i] = tmp[i - left];
 	free(tmp);
