@@ -80,7 +80,7 @@ void merge_recursion(int *array, size_t left, size_t right)
  */
 void merge_sort(int *array, size_t size)
 {
-	if (size < 2)
+	if (size < 2 || !array)
 		return;
 	merge_recursion(array, 0, size - 1);
 }
