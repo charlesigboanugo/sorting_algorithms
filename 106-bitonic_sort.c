@@ -23,7 +23,6 @@ void bitonic_merge(int *array, int low, int count, int direction, size_t size)
 				temp = array[i];
 				array[i] = array[i + k];
 				array[i + k] = temp;
-				print_array(array, size);
 			}
 		}
 		bitonic_merge(array, low, k, direction, size);
