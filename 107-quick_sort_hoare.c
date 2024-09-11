@@ -74,7 +74,7 @@ void quick_sort_rec(int *array, int low, int high, size_t size)
 }
 
 /**
- * quick_sort - Public function to sort the array
+ * quick_sort_hoare - Public function to sort the array
  * @array: The array to sort
  * @size: The size of the array
  */
