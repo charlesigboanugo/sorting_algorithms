@@ -32,7 +32,7 @@ void swap(int *array, size_t i, size_t j, size_t size)
  */
 int hoare_partition(int *array, int low, int high, size_t size)
 {
-	int pivot = array[low];
+	int pivot = array[high];
 	int i = low - 1;
 	int j = high + 1;
 
