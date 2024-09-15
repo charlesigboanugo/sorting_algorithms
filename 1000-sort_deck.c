@@ -73,6 +73,7 @@ int compare_cval(const void *dknode1, const void *dknode2)
 
 /**
  * sort_deck - sorts a deck of cards
+ * @deck: pointer to head of a deck of cards
  */
 void sort_deck(deck_node_t **deck)
 {
